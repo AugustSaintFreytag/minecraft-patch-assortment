@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"package": "net.saint.patchassortment.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"plugin": "net.saint.patchassortment.ModMixinPlugin",
+	"client": [
+		"smallships/CogEntityMixin",
+		"smallships/BriggEntityMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
