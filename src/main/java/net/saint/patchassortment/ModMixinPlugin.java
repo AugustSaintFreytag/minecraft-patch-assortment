@@ -1,12 +1,28 @@
 package net.saint.patchassortment;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.function.Supplier;
 
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
+import com.google.common.collect.ImmutableMap;
+
+import net.fabricmc.loader.api.FabricLoader;
+
 public class ModMixinPlugin implements IMixinConfigPlugin {
+
+	private static final Supplier<Boolean> TRUE = () -> true;
+
+	private static final Map<String, Supplier<Boolean>> CONDITIONS = ImmutableMap
+			.of("net.saint.patch-assortment.mixin.smallships.BriggEntityMixin", () -> FabricLoader.getInstance().isModLoaded("smallships"));
+
+	@Override
+	public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+		return CONDITIONS.getOrDefault(mixinClassName, TRUE).get();
+	}
 
 	@Override
 	public void onLoad(String mixinPackage) {
@@ -15,11 +31,6 @@ public class ModMixinPlugin implements IMixinConfigPlugin {
 	@Override
 	public String getRefMapperConfig() {
 		return null;
-	}
-
-	@Override
-	public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-		return true;
 	}
 
 	@Override
