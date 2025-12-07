@@ -6,6 +6,7 @@
 	"client": [
 		"smallships.CogEntityMixin",
 		"smallships.BriggEntityMixin",
+		"betternether.FireflyGlowFeatureRendererMixin",
 	],
 	"injectors": {
 		"defaultRequire": 1
