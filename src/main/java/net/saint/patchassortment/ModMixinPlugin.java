@@ -16,8 +16,17 @@ public class ModMixinPlugin implements IMixinConfigPlugin {
 
 	private static final Supplier<Boolean> TRUE = () -> true;
 
-	private static final Map<String, Supplier<Boolean>> CONDITIONS = ImmutableMap
-			.of("net.saint.patch-assortment.mixin.smallships.BriggEntityMixin", () -> FabricLoader.getInstance().isModLoaded("smallships"));
+	private static final Map<String, Supplier<Boolean>> CONDITIONS = ImmutableMap.of(
+			"net.saint.patchassortment.mixin.smallships.BriggEntityMixin", () -> FabricLoader.getInstance().isModLoaded("smallships"),
+			"net.saint.patchassortment.mixin.smallships.CogEntityMixin", () -> FabricLoader.getInstance().isModLoaded("smallships"),
+			"net.saint.patchassortment.mixin.betternether.FireflyGlowFeatureRendererMixin",
+			() -> FabricLoader.getInstance().isModLoaded("betternether"),
+			"net.saint.patchassortment.mixin.tenseambience.SoundManagerAccessor",
+			() -> FabricLoader.getInstance().isModLoaded("tense-ambience"),
+			"net.saint.patchassortment.mixin.tenseambience.BiomeSoundHandlerDaytimeFadeMixin",
+			() -> FabricLoader.getInstance().isModLoaded("tense-ambience"),
+			"net.saint.patchassortment.mixin.tenseambience.BiomeSoundHandlerSkyAngleMixin",
+			() -> FabricLoader.getInstance().isModLoaded("tense-ambience"));
 
 	@Override
 	public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {

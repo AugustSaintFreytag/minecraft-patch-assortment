@@ -8,6 +8,11 @@
 		"smallships.CogEntityMixin",
 		"smallships.BriggEntityMixin",
 		"betternether.FireflyGlowFeatureRendererMixin",
+		"tenseambience.SoundManagerAccessor",
+		"tenseambience.SoundManagerVolumeComputationMixin",
+		"tenseambience.SoundManagerVolumeScaleMixin",
+		"tenseambience.BiomeSoundHandlerDaytimeFadeMixin",
+		"tenseambience.BiomeSoundHandlerSkyAngleMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
