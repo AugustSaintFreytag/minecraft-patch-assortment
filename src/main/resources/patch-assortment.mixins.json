@@ -12,7 +12,8 @@
 		"tenseambience.SoundManagerVolumeComputationMixin",
 		"tenseambience.SoundManagerVolumeScaleMixin",
 		"tenseambience.BiomeSoundHandlerDaytimeFadeMixin",
-		"tenseambience.BiomeSoundHandlerSkyAngleMixin"
+		"tenseambience.BiomeSoundHandlerSkyAngleMixin",
+		"immersivefurniture.FurnitureItemMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
