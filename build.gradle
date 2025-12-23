@@ -38,6 +38,9 @@ dependencies {
 	// Tense Ambience
 	modCompileOnly("maven.modrinth:tense-ambience:${project.tense_ambience_version}")
 	
+
+	// Immersive Furniture
+	modCompileOnly("maven.modrinth:immersive-furniture:${project.immersive_furniture_version}")
 }
 
 processResources {
