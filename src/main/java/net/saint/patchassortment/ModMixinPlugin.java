@@ -26,7 +26,9 @@ public class ModMixinPlugin implements IMixinConfigPlugin {
 			"net.saint.patchassortment.mixin.tenseambience.BiomeSoundHandlerDaytimeFadeMixin",
 			() -> FabricLoader.getInstance().isModLoaded("tense-ambience"),
 			"net.saint.patchassortment.mixin.tenseambience.BiomeSoundHandlerSkyAngleMixin",
-			() -> FabricLoader.getInstance().isModLoaded("tense-ambience"));
+			() -> FabricLoader.getInstance().isModLoaded("tense-ambience"),
+			"net.saint.patchassortment.mixin.immersivefurniture.FurnitureItemMixin",
+			() -> FabricLoader.getInstance().isModLoaded("immersive_furniture"));
 
 	@Override
 	public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
