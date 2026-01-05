@@ -28,5 +28,11 @@
 		"java": ">=17",
 		"fabric-api": "*"
 	},
-	"suggests": {}
+	"suggests": {
+		"betternether": "9.0.10",
+		"smallships": "2.0.0-b1.4",
+		"tenseambience": "1.7.0",
+		"immersive_furniture": "0.1.2+1.20.1"
+
+	}
 }

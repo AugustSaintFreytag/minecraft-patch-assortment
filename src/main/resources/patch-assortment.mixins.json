@@ -9,12 +9,14 @@
 		"smallships.CogEntityMixin",
 		"smallships.BriggEntityMixin",
 		"betternether.FireflyGlowFeatureRendererMixin",
-		"tenseambience.SoundManagerAccessor",
-		"tenseambience.SoundManagerVolumeComputationMixin",
-		"tenseambience.SoundManagerVolumeScaleMixin",
 		"tenseambience.BiomeSoundHandlerDaytimeFadeMixin",
 		"tenseambience.BiomeSoundHandlerSkyAngleMixin",
 		"immersivefurniture.FurnitureItemMixin"
+	],
+	"clientDisabled": [
+		"tenseambience.SoundManagerAccessor",
+		"tenseambience.SoundManagerVolumeComputationMixin",
+		"tenseambience.SoundManagerVolumeScaleMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
