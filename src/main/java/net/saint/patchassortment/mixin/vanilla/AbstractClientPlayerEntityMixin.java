@@ -11,7 +11,7 @@ public abstract class AbstractClientPlayerEntityMixin {
 
 	@ModifyConstant(method = "getFovMultiplier()F", constant = @Constant(floatValue = 0.1F, ordinal = 0), require = 1)
 	private float pa$spyglassFovMultiplier(float original) {
-		return 0.25F;
+		return 0.35F;
 	}
 
 }
