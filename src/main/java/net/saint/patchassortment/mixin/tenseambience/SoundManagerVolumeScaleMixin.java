@@ -1,37 +1,27 @@
 package net.saint.patchassortment.mixin.tenseambience;
 
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.Inject;
 
 import net.cyberking42.tenseambience.SoundManager;
 
-/**
- * Scales all ambience volumes by a configurable factor (default 0.5x). Configure via JVM property:
- * -Dpatchassortment.tenseambienceVolumeScale=0.5
- */
 @Mixin(value = SoundManager.class, remap = false)
 public class SoundManagerVolumeScaleMixin {
 
-	@Unique
-	private static final float patchassortment$volumeScale = getScale();
+	private static final float VOLUME_FACTOR = 0.75f;
 
-	@ModifyVariable(method = "playLoopingSound", at = @At("HEAD"), argsOnly = true)
-	private static float patchassortment$scalePlayLoopingVolume(float volumeMultiplier) {
-		return volumeMultiplier * patchassortment$volumeScale;
+	@Shadow
+	private static volatile float cachedMasterVolume;
+
+	@Inject(method = "updateMasterVolumeCache", at = @At("RETURN"))
+	private static void updateMasterVolumeCache(float volume) {
+		cachedMasterVolume = volume * VOLUME_FACTOR;
 	}
 
-	@ModifyVariable(method = "updateCurrentSoundVolume", at = @At("HEAD"), argsOnly = true)
-	private static float patchassortment$scaleUpdateCurrentVolume(float volumeMultiplier) {
-		return volumeMultiplier * patchassortment$volumeScale;
+	static {
+		SoundManager.updateMasterVolumeCache(VOLUME_FACTOR);
 	}
 
-	private static float getScale() {
-		try {
-			return Math.max(0.0f, (float) Double.parseDouble(System.getProperty("patchassortment.tenseambienceVolumeScale", "0.5")));
-		} catch (NumberFormatException ex) {
-			return 0.75f;
-		}
-	}
 }
