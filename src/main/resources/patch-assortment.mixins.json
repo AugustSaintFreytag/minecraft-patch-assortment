@@ -5,6 +5,7 @@
 	"plugin": "net.saint.patchassortment.ModMixinPlugin",
 	"client": [
 		"vanilla.AbstractClientPlayerEntityMixin",
+		"vanilla.LeavesBlockMixin",
 		"vanilla.MagmaBlockMixin",
 		"entityviewdistance.EvdValueModifierOptionMixin",
 		"smallships.CogEntityMixin",
