@@ -6,6 +6,7 @@
 	"client": [
 		"vanilla.AbstractClientPlayerEntityMixin",
 		"vanilla.MagmaBlockMixin",
+		"entityviewdistance.EvdValueModifierOptionMixin",
 		"smallships.CogEntityMixin",
 		"smallships.BriggEntityMixin",
 		"betternether.FireflyGlowFeatureRendererMixin",

@@ -29,6 +29,7 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
+		"entity-view-distance": "1.1.2+1.20",
 		"betternether": "9.0.10",
 		"smallships": "2.0.0-b1.4",
 		"tenseambience": ">=1.7.0",
